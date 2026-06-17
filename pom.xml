@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>tss</groupId>
+  <artifactId>test-automation</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>TSS Cucumber BDD project</name>
+
+  <properties>
+    <java.version>21</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <serenity.version>4.1.3</serenity.version>
+    <serenity.cucumber.version>4.1.3</serenity.cucumber.version>
+    <junit-vintage-engine.version>5.10.0</junit-vintage-engine.version>
+    <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
+    <cucumber-junit-platform-engine.version>7.15.0</cucumber-junit-platform-engine.version>
+    <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
+    <maven.failsafe.plugin.version>3.0.0-M7</maven.failsafe.plugin.version>
+    <tags></tags>
+  </properties>
+
+  <dependencies>
+
+    <!-- Serenity BDD Core Library -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-core</artifactId>
+      <version>${serenity.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Serenity Integration with JUnit 5 -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-junit5</artifactId>
+      <version>${serenity.version}</version>
+    </dependency>
+
+    <!-- Serenity Integration with Cucumber -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-cucumber</artifactId>
+      <version>${serenity.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Serenity Ensure - Fluent Assertions Library -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-ensure</artifactId>
+      <version>${serenity.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit Platform Launcher for Test Discovery and Execution -->
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-launcher</artifactId>
+      <version>${junit-platform-suite.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Cucumber Engine for JUnit Platform -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit-platform-engine</artifactId>
+      <version>${cucumber-junit-platform-engine.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit Platform Test Suite Support -->
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite</artifactId>
+      <version>${junit-platform-suite.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit Jupiter Engine for JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-vintage-engine.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit Vintage Engine to run JUnit 4 tests on JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>${junit-vintage-engine.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Logging Framework: Logback Classic -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+
+    <!-- Command Line Input Handling: JLine -->
+    <dependency>
+      <groupId>jline</groupId>
+      <artifactId>jline</artifactId>
+      <version>2.11</version>
+    </dependency>
+
+    <!-- REST API Testing Library: Rest-Assured -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>5.3.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- For drawing charts in Java -->
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+
+    <!-- Optional: Commons IO for reading files or payloads -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+
+    <!-- Java Faker - Fake Data Generator for Testing -->
+    <dependency>
+      <groupId>com.github.javafaker</groupId>
+      <artifactId>javafaker</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+
+    <!-- AssertJ Core - Fluent Assertions -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.23.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JSON Simple Library -->
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+<!--    <dependency>-->
+<!--      <groupId>org.apache.poi</groupId>-->
+<!--      <artifactId>poi-ooxml</artifactId>-->
+<!--      <version>5.2.5</version>-->
+<!--    </dependency>-->
+
+    <!-- Apache Commons Lang - Common Utilities -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.14.0</version>
+    </dependency>
+
+    <!-- Lombok -->
+<!--    <dependency>-->
+<!--      <groupId>org.projectlombok</groupId>-->
+<!--      <artifactId>lombok</artifactId>-->
+<!--      <version>1.18.30</version>-->
+<!--      <scope>provided</scope>-->
+<!--    </dependency>-->
+
+    <!-- Apache POI - for .xls and .xlsx file support -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.2.3</version> <!-- Updated to a compatible version -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml-schemas</artifactId>
+      <version>4.1.2</version> <!-- Ensure compatibility with poi-ooxml -->
+    </dependency>
+
+    <!-- Apache Commons IO (to support IO utilities) -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.3.2</version> <!-- Ensure it's at least version 2.8.0 or higher -->
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.20.0</version> <!-- Use the latest version available -->
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>jakarta.mail</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.surefire.plugin.version}</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${maven.failsafe.plugin.version}</version>
+        <configuration>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>net.serenity-bdd.maven.plugins</groupId>
+        <artifactId>serenity-maven-plugin</artifactId>
+        <version>${serenity.version}</version>
+        <configuration>
+          <tags>${tags}</tags>
+          <reports>single-page-html</reports>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-single-page-report</artifactId>
+            <version>${serenity.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>serenity-reports</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>aggregate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

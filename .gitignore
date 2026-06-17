@@ -1,0 +1,41 @@
+
+/target/*
+*/serenity-reports/*
+# /target/**
+# */target/**
+# /target/
+# /target/*
+
+# target
+build
+.gradle
+.idea
+lib
+
+# *.iml
+# *.ipr
+# *.iws
+
+*.txt
+*.class
+*.html
+*.js
+*.css
+# *.json
+
+
+.classpath
+.settings/*
+
+# .html
+
+/target/
+
+.DS_Store
+.factorypath
+/.apt_generated/
+/.apt_generated_tests/
+.project
+.metadata/*
+.vscode/*
+
